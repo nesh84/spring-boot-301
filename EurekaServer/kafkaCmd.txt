@@ -1,0 +1,25 @@
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic feedbackRecived --from-beginning
+
+
+
+# .\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions --topic TestTopic
+
+mvn clean install -DskipTests
+
+http://localhost:8888/config-server/devlopment
+
+http://localhost:8761/
+
+http://localhost:8080/review-service/review/1
+http://zuul-service/review-service/review/1 -- not working
+
+http://localhost:8082/swagger-ui.html#/customer-controller/updateCustomerUsingPUT
+
+2021-07-27 15:11:47.071  INFO 2964 --- [nio-8081-exec-7] c.e.r.service.reviewService.Producer     : Feedback created -> FeedbackDto [reviewDetails=Nice Food, rating=4, customerId=1, reviewId=1, note=Thank you]
+2021-07-27 15:15:27.108  INFO 2964 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-27 15:16:59.651  INFO 2964 --- [nio-8081-exec-8] c.e.r.service.reviewService.Producer     : Feedback created -> FeedbackDto [reviewDetai
+
